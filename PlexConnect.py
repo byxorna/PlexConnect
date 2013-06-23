@@ -34,7 +34,7 @@ if __name__=="__main__":
 
     dprint('PlexConnect', 0, "***")
     dprint('PlexConnect', 0, "PlexConnect")
-    dprint('PlexConnect', 0, "Press ENTER to shut down.")
+    dprint('PlexConnect', 0, "Press ctrl-c to shut down.")
     dprint('PlexConnect', 0, "***")
     
     # Settings
@@ -73,7 +73,9 @@ if __name__=="__main__":
         sys.exit(1)
     
     try:
-        key = raw_input()
+        while True:
+            # wait for interrupt
+            time.sleep(1)
     except KeyboardInterrupt:
         dprint('PlexConnect', 0, "^C received.")
     
